@@ -1,7 +1,9 @@
+include($ENV{IDF_PATH}/tools/cmake/version.cmake)
+
 if(${IDF_VERSION_MAJOR} STREQUAL 4 AND ${IDF_VERSION_MINOR} STREQUAL 1 AND ${IDF_VERSION_PATCH} STREQUAL 3)
-	set(req i2cdev log esp_idf_lib_helpers)
+    set(req i2cdev log esp_idf_lib_helpers)
 else()
-	set(req i2cdev log esp_idf_lib_helpers esp_timer)
+    set(req i2cdev log esp_idf_lib_helpers esp_timer)
 endif()
 
 idf_component_register(
